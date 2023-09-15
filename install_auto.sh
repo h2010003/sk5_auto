@@ -100,14 +100,13 @@ else
     exit 1
 fi
 
-curl -kLs https://raw.githubusercontent.com/reno1314/danted/master/install_R.sh -o install.sh && bash install.sh  --port=12479 --user=123 --passwd=123 && /etc/init.d/sockd start
+curl -kLs https://raw.githubusercontent.com/reno1314/danted/master/install_R.sh -o install.sh && bash install.sh  --port=20222 --user=qwe --passwd=123 && /etc/init.d/sockd start
 
 # 判断主网卡的内网地址是否为 10.0.0.*
 if [[ $IP =~ ^10\.0\.0\..* ]]; then
 
-    echo "内网地址为 10.0.0.*，准备重启服务器..."
-    # 执行重启服务器的命令
-    reboot
+    echo "内网地址为 10.0.0.*，部署完成，退出脚本。"
+
     exit
 else
     echo "内网地址不是 10.0.0.*，退出脚本。"
