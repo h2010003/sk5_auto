@@ -106,7 +106,6 @@ curl -kLs https://raw.githubusercontent.com/reno1314/danted/master/install_R.sh 
 if [[ $IP =~ ^10\.0\.0\..* ]]; then
 
     echo "内网地址为 10.0.0.*，部署完成，退出脚本。"
-
     exit
 else
     echo "内网地址不是 10.0.0.*，退出脚本。"
