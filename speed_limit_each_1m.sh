@@ -91,7 +91,8 @@ setup_traffic_control() {
 
 # 创建限速规则
 create_traffic_control() {
-  ip_addresses=("10.0.0.4" "10.0.0.5" "10.0.0.6" "10.0.0.7" "10.0.0.8" "10.0.0.9" "10.0.0.10" "10.0.0.11" "10.0.0.12" "10.0.0.13")
+  local_ip=$(ip route get 8.8.8.8 | awk '{print $7; exit}')
+  ip_addresses=("$local_ip")
 
   # 初始化classid计数器
   class_id_counter=2
